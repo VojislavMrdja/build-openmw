@@ -317,7 +317,7 @@ def install_packages(distro: str, **kwargs) -> bool:
         out, err = execute_shell(cmd, verbose=verbose)[1]
     elif "arch" in distro.lower():
         emit_log("Distro detected as 'Arch Linux'")
-        cmd = ["pacman", "-sy"] + ARCH_PKGS
+        cmd = ["pacman", "-Sy"] + ARCH_PKGS
         if user_uid > 0:
             cmd = ["sudo"] + cmd
         out, err = execute_shell(cmd, verbose=verbose)[1]
